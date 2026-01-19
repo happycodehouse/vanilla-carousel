@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
+    <link rel="stylesheet" href="./css/style.min.css">
+    <title>no-library-carousel</title>
+</head>
+<body>
+
+<div id="wrap" class="wrap">
+    <header>
+        <h1>No Library Carousel</h1>
+        <a href="https://github.com/happycodehouse/no-library-carousel" rel="noopener noreferrer" target="_blank">GitHub</a>
+        <p>Images sourced from <a href="https://www.eesookee.com/" rel="noopener noreferrer" target="_blank">eesookee.com</a></p>
+    </header>
+    <div class="carousel-option">
+        <div class="how-many-carousel">
+            <span>Select the number of slides.</span>
+            <div class="btn-wrap">
+                <button type="button">1</button>
+                <button type="button">2</button>
+                <button type="button">3</button>
+                <button type="button">4</button>
+                <button type="button" class="active">5</button>
+                <button type="button">6</button>
+                <button type="button">7</button>
+            </div>
+        </div>
+        <div class="is-center-mode">
+            <span>Center Mode</span>
+            <div class="btn-wrap">
+                <button class="active" type="button">ON</button>
+                <button type="button">OFF</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="carousel">
+        <div class="carousel-inner">
+            <div class="slide" data-idx="0" data-pos="0">
+                <img src="./images/img-01.jpg" alt="">
+            </div>
+            <div class="slide" data-idx="1" data-pos="1">
+                <img src="./images/img-02.jpg" alt="">
+            </div>
+            <div class="slide" data-idx="2" data-pos="2">
+                <img src="./images/img-03.jpg" alt="">
+            </div>
+            <div class="slide" data-idx="3" data-pos="-2">
+                <img src="./images/img-04.jpg" alt="">
+            </div>
+            <div class="slide" data-idx="4" data-pos="-1">
+                <img src="./images/img-05.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="controls">
+        <button id="prevBtn">prev</button>
+        <button id="nextBtn">next</button>
+    </div>
+</div>
+<script src="./js/custom.js"></script>
+</body>
+</html>
