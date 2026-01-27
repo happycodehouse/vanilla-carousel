@@ -3,12 +3,11 @@ const $carousel = document.querySelector(".carousel"),
     $controls = document.querySelector(".controls"),
     $nextBtn = document.querySelector("#nextBtn"),
     $prevBtn = document.querySelector("#prevBtn"),
-    $howManyBtns = document.querySelectorAll(".how-many-carousel button"),
-    $centerOnBtn = document.querySelector("#centerOnBtn"),
-    $centerOffBtn = document.querySelector("#centerOffBtn");
+    $carouselOptionBtns = document.querySelectorAll(".carousel-option button");
 
 let config = { gap: 10, widthPercent: 20, limit: 4 };
 let isTransitioning = false;
+let slidesPerView = 5;
 
 /**
  * 1. 슬라이드 위치 계산 및 배치 함수
@@ -66,13 +65,13 @@ function updateSlideCount(count) {
 
     slidesData.forEach((num, index) => {
         let pos;
-        if (count < 5) {
+        if (count < slidesPerView) {
             // 5개 미만: 중앙 정렬 배치
             pos = -Math.floor(count / 2) + index;
         } else {
             // 5개 이상: [5, 6, (1), 2, 3, 4] 형태의 대칭 배치
             if (index === 0) pos = 0;
-            else if (index <= 2 || (count > 5 && index === 3)) pos = index; // 오른쪽 배치
+            else if (index <= 2 || (count > slidesPerView && index === 3)) pos = index; // 오른쪽 배치
             else pos = index - count; // 왼쪽 배치
         }
         $carouselInner.appendChild(createSlideElement(num, pos));
@@ -147,16 +146,28 @@ function move(direction) {
 $nextBtn.addEventListener("click", () => move("next"));
 $prevBtn.addEventListener("click", () => move("prev"));
 
-$howManyBtns.forEach((btn, idx) => {
+$carouselOptionBtns.forEach((btn, idx) => {
     btn.addEventListener("click", () => {
-        const currentActive = document.querySelector(".how-many-carousel button.active");
-        if (currentActive) currentActive.classList.remove("active");
+        // 1. 기존 active 버튼 정리 및 현재 버튼 활성화
+        document.querySelector(".carousel-option button.active")?.classList.remove("active");
         btn.classList.add("active");
-        updateSlideCount(idx + 1);
+
+        // 2. 슬라이드 개수 업데이트
+        const count = idx + 1; // 또는 parseInt(btn.innerHTML)
+        updateSlideCount(count);
+
+        console.log(count);
     });
 });
 
 window.addEventListener("resize", staticPosition);
 
 // 초기 실행
-staticPosition();
+const activeBtn = document.querySelector(".carousel-option button.active");
+if (activeBtn) {
+    const activeIndex = Array.from($carouselOptionBtns).indexOf(activeBtn);
+    const initialCount = activeIndex + 1;
+    updateSlideCount(initialCount);
+} else {
+    staticPosition();
+}

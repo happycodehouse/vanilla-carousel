@@ -19,17 +19,14 @@
 
 
 .carousel-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: to_vw(8);
     position: absolute;
     top: 1rem;
     right: 2rem;
     z-index: 99;
-
-    > div {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: to_vw(8);
-    }
 
     span {
         font-family: "AustinNewsDeckWeb", sans-serif;
