@@ -5,7 +5,7 @@
   <img src="./images/preview.png" width="600px">
 </p>
 
-[🔗 Live Demo](https://vanilla-carousel-js.netlify.app/)
+[🔗 Live Demo](https://vanilla-carousel-demo.netlify.app/)
 
 ---
 
@@ -32,5 +32,6 @@ let config = {
     limit: 4           // Controls enabled when slides > 4
 };
 ```
+
 
 
