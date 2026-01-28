@@ -22,3 +22,13 @@
 - **JavaScript (ES6+)**
 - **CSS3** (Transform-based positioning)
 - **SCSS**
+
+## Configuration
+
+```javascript
+let config = { 
+    gap: 10,           // Space between slides
+    widthPercent: 20,  // Slide width (%)
+    limit: 4           // Min slides for controls
+};
+```
