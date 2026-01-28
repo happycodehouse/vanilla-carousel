@@ -1,11 +1,11 @@
-# 🎠 Vanilla Carousel
+# 🎠 Vanilla Carousel Demo
 > Pure JavaScript infinite carousel with dynamic slide positioning and smooth transitions
 
 <p align="left">
   <img src="./images/preview.png" width="600px">
 </p>
 
-[🔗 Live Demo](https://vanilla-carousel-js.netlify.app/)
+[🔗 Live Demo](https://vanilla-carousel-demo.netlify.app/)
 
 ---
 
@@ -29,6 +29,9 @@
 let config = { 
     gap: 10,           // Space between slides
     widthPercent: 20,  // Slide width (%)
-    limit: 4           // Min slides for controls
+    limit: 4           // Controls enabled when slides > 4
 };
 ```
+
+
+
