@@ -1,4 +1,4 @@
-# 🎠 Vanilla Carousel
+# 🎠 Vanilla Carousel Demo
 > Pure JavaScript infinite carousel with dynamic slide positioning and smooth transitions
 
 <p align="left">
@@ -32,4 +32,5 @@ let config = {
     limit: 4           // Controls enabled when slides > 4
 };
 ```
+
 
